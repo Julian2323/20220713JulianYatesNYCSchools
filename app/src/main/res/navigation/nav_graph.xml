@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/SchoolRVFragment">
+
+    <fragment
+        android:id="@+id/SchoolRVFragment"
+        android:name="com.example.a20220713julianyatesnycschools.SchoolRVFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_school_rv">
+
+        <action
+            android:id="@+id/action_SchoolRVFragment_to_DetailFragment"
+            app:destination="@id/DetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/DetailFragment"
+        android:name="com.example.a20220713julianyatesnycschools.DetailFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_detail">
+
+        <action
+            android:id="@+id/action_DetailFragment_to_SchoolRVFragment"
+            app:destination="@id/SchoolRVFragment" />
+
+        <argument
+            android:name="dbn"
+            app:argType="string" />
+    </fragment>
+</navigation>
